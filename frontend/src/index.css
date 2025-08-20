@@ -2,71 +2,205 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Professional Portfolio Design System - Roshan Shrestha
+Modern business theme with professional colors and clean aesthetics
+All colors MUST be HSL.
+*/
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    /* Professional dark theme */
+    --background: 220 13% 9%;
+    --foreground: 220 9% 95%;
+
+    --card: 220 13% 11%;
+    --card-foreground: 220 9% 95%;
+
+    --popover: 220 13% 11%;
+    --popover-foreground: 220 9% 95%;
+
+    /* Professional blue primary */
+    --primary: 217 91% 60%;
+    --primary-foreground: 220 13% 9%;
+
+    /* Professional secondary */
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 220 9% 85%;
+
+    --muted: 220 13% 13%;
+    --muted-foreground: 220 9% 65%;
+
+    /* Professional accent */
+    --accent: 212 100% 47%;
+    --accent-foreground: 220 13% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 220 9% 95%;
+
+    --border: 220 13% 18%;
+    --input: 220 13% 13%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom professional tokens */
+    --professional-blue: 217 91% 60%;
+    --slate-blue: 212 100% 47%;
+    --success-green: 142 76% 36%;
+    --deep-slate: 220 13% 11%;
+    
+    /* Gradients */
+    --gradient-professional: linear-gradient(135deg, hsl(var(--professional-blue)) 0%, hsl(var(--slate-blue)) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--deep-slate)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(220 13% 12%) 100%);
+    
+    /* Shadows & Effects */
+    --shadow-professional: 0 10px 40px hsl(217 91% 60% / 0.15);
+    --shadow-card: 0 4px 20px hsl(220 13% 5% / 0.3);
+    --shadow-elegant: 0 8px 25px hsl(220 13% 5% / 0.4);
+    
+    /* Animation durations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  a:hover {
-    color: #747bff;
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
-  button {
-    background-color: #f9f9f9;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    background-image: var(--gradient-dark);
+  }
+}
+
+@layer components {
+  /* Professional styling effects */
+  .professional-text {
+    color: hsl(var(--professional-blue));
+    font-weight: 600;
+  }
+  
+  .professional-border {
+    border: 1px solid hsl(var(--professional-blue) / 0.3);
+    box-shadow: 0 2px 10px hsl(var(--professional-blue) / 0.1);
+  }
+  
+  .professional-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+  
+  .professional-card:hover {
+    border-color: hsl(var(--professional-blue) / 0.4);
+    box-shadow: var(--shadow-professional);
+  }
+  
+  .gradient-bg {
+    background: var(--gradient-dark);
+  }
+  
+  .professional-input {
+    background: hsl(var(--input));
+    border: 1px solid hsl(var(--border));
+    transition: var(--transition-smooth);
+  }
+  
+  .professional-input:focus {
+    border-color: hsl(var(--professional-blue));
+    box-shadow: 0 0 0 2px hsl(var(--professional-blue) / 0.2);
+    outline: none;
+  }
+  
+  /* Subtle background pattern */
+  .subtle-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(2px 2px at 40px 60px, hsl(var(--professional-blue) / 0.1), transparent),
+      radial-gradient(1px 1px at 90px 120px, hsl(var(--slate-blue) / 0.08), transparent);
+    background-size: 120px 120px;
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  .text-professional {
+    color: hsl(var(--professional-blue));
+  }
+  
+  .bg-professional-gradient {
+    background: var(--gradient-professional);
+  }
+  
+  .shadow-professional {
+    box-shadow: var(--shadow-professional);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
   }
 }
