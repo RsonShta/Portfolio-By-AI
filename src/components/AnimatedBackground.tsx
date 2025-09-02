@@ -50,43 +50,72 @@ const AnimatedBackground = ({ variant = "grid", className = "" }: AnimatedBackgr
 
   const renderGrid = () => (
     <div className={`absolute inset-0 overflow-hidden ${className}`}>
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-30">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern
               id="grid"
-              width="60"
-              height="60"
+              width="80"
+              height="80"
               patternUnits="userSpaceOnUse"
             >
               <path
-                d="M 60 0 L 0 0 0 60"
+                d="M 80 0 L 0 0 0 80"
                 fill="none"
                 stroke="hsl(var(--primary))"
                 strokeWidth="0.5"
-                opacity="0.3"
+                opacity="0.4"
+              />
+              <path
+                d="M 40 0 L 40 80 M 0 40 L 80 40"
+                fill="none"
+                stroke="hsl(var(--accent))"
+                strokeWidth="0.3"
+                opacity="0.2"
               />
             </pattern>
             <pattern
               id="gridGlow"
-              width="120"
-              height="120"
+              width="160"
+              height="160"
               patternUnits="userSpaceOnUse"
             >
               <circle
-                cx="60"
-                cy="60"
-                r="1"
+                cx="80"
+                cy="80"
+                r="2"
                 fill="hsl(var(--accent))"
-                opacity="0.6"
+                opacity="0.8"
+              >
+                <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3s" repeatCount="indefinite" />
+              </circle>
+            </pattern>
+            <pattern
+              id="hexGrid"
+              width="100"
+              height="87"
+              patternUnits="userSpaceOnUse"
+            >
+              <polygon
+                points="50,3 93,25 93,69 50,91 7,69 7,25"
+                fill="none"
+                stroke="hsl(var(--purple))"
+                strokeWidth="0.3"
+                opacity="0.15"
               />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
+          <rect width="100%" height="100%" fill="url(#hexGrid)" />
           <rect width="100%" height="100%" fill="url(#gridGlow)" />
         </svg>
       </div>
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-primary/5 to-accent/5 animate-pulse-glow" />
+      
+      {/* Floating geometric shapes */}
+      <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-primary/20 rotate-45 animate-drift" />
+      <div className="absolute top-3/4 right-1/4 w-24 h-24 border border-accent/20 rounded-full animate-float" />
+      <div className="absolute top-1/2 right-1/3 w-20 h-20 border border-purple/20 rotate-12 animate-drift" style={{ animationDelay: '-5s' }} />
     </div>
   );
 
