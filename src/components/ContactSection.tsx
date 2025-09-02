@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import AnimatedBackground from "./AnimatedBackground";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -54,8 +55,9 @@ const ContactSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative py-20 px-6 overflow-hidden">
+      <AnimatedBackground variant="waves" className="opacity-20" />
+      <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Let's <span className="text-gradient-primary">Connect</span>

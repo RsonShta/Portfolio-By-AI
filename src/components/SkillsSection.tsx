@@ -1,6 +1,7 @@
 import { Code, Shield, Server, Database, Globe, Lock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import AnimatedBackground from "./AnimatedBackground";
 
 const SkillsSection = () => {
   const skillCategories = [
@@ -49,8 +50,9 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-dark">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative py-20 px-6 bg-gradient-dark overflow-hidden">
+      <AnimatedBackground variant="network" className="opacity-25" />
+      <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Skills & <span className="text-gradient-secondary">Expertise</span>

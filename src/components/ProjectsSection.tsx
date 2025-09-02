@@ -2,6 +2,7 @@ import { ExternalLink, Github, Shield, Globe, Database } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import AnimatedBackground from "./AnimatedBackground";
 
 const ProjectsSection = () => {
   const projects = [
@@ -44,8 +45,9 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="relative py-20 px-6 overflow-hidden">
+      <AnimatedBackground variant="grid" className="opacity-30" />
+      <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured <span className="text-gradient-primary">Projects</span>

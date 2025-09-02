@@ -1,14 +1,16 @@
 import { Shield, Code2, Network, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-bg.jpg";
+import AnimatedBackground from "./AnimatedBackground";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
         style={{ backgroundImage: `url(${heroImage})` }}
       />
+      <AnimatedBackground variant="particles" className="opacity-40" />
       <div className="absolute inset-0 bg-gradient-dark" />
       
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
