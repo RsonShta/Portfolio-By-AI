@@ -1,0 +1,470 @@
+[
+  {
+    "id": "TC001",
+    "title": "Homepage initial load performance",
+    "description": "Verify that the homepage loads within 2 seconds on a typical 3G connection or that a documented performance optimization plan is available.",
+    "category": "performance",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Simulate loading the homepage on a 3G network environment"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page content renders and becomes interactive within 2 seconds or an appropriate fallback strategy or optimization plan is logged"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Hero section displays correctly with animated background",
+    "description": "Check that the hero section renders the full-bleed area with engaging visuals and primary calls-to-action are visible.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the homepage"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the hero section is full width and height as per design"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify presence of introductory text and primary call-to-action buttons"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that the animated background component plays animation when user preference for reduced motion is not set"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Animated backgrounds respect reduced-motion preference",
+    "description": "Ensure that the Animated Background component disables animations or reduces motion if the user has set system preferences for reduced motion.",
+    "category": "accessibility",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Set system user preference to reduced motion"
+      },
+      {
+        "type": "action",
+        "description": "Load the homepage"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the animated background is static or has reduced animation according to accessibility guidelines"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Projects section renders project cards with filtering",
+    "description": "Verify that the projects section displays project cards with images, descriptions, tech tags, and links, and supports filtering by categories or technologies.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the projects section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that all project cards display with an image, description, technology tags, and links to source code and live demo"
+      },
+      {
+        "type": "action",
+        "description": "Use the filtering controls to select a specific project category or technology"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify only projects matching the filter criteria are shown"
+      },
+      {
+        "type": "action",
+        "description": "Clear all filters"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all projects are visible again"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Projects detail view accessibility and correctness",
+    "description": "Clicking a project card opens a modal or navigates to a detail page showing screenshots, descriptions, tech stack, live demos, and supports carousel where applicable.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Click on a project card"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a modal or detail page opens with detailed project information"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all images and screenshots load correctly; fallback placeholder is used if any image fails to load"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify tech stack and descriptions are present and accurate"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify controls to view demo or repository links are present and functional"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify carousel navigation works if multiple images/screenshots are present"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Empty projects list displays friendly placeholder",
+    "description": "Verify that when no projects match the filter criteria or the project list is empty, a friendly placeholder message is shown.",
+    "category": "error handling",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Apply filters that match no projects or simulate empty projects data"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that a friendly user-facing message indicating no projects are available is displayed"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Skills section visual and content verification",
+    "description": "Verify the skills section correctly displays skills grouped by frontend, backend, and tools, with appropriate icons or progress indicators representing competency.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the skills section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify skill groups for frontend, backend, and tools exist"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify each skill displays an icon or progress indicator reflecting competency"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Contact form client-side validation and submission success",
+    "description": "Verify that the contact form validates inputs in real-time and on submission, submits data successfully and provides appropriate success feedback.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the contact section"
+      },
+      {
+        "type": "action",
+        "description": "Fill the form with valid name, email, and message"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify real-time validation shows no errors"
+      },
+      {
+        "type": "action",
+        "description": "Submit the form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify inline loading indicator appears"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify success toast notification is shown"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Contact form client-side validation error handling",
+    "description": "Verify that the contact form shows appropriate validation errors for incomplete or invalid inputs before submission.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the contact section"
+      },
+      {
+        "type": "action",
+        "description": "Input invalid email format and leave required fields empty"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that real-time validation marks invalid fields and displays error messages"
+      },
+      {
+        "type": "action",
+        "description": "Attempt to submit the form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify submission is blocked and errors are shown"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Contact form handles API failure with retry and preserves input",
+    "description": "Confirm that when the contact API call fails, the form displays failure feedback, provides a retry option, and preserves user input.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Fill the contact form with valid data"
+      },
+      {
+        "type": "action",
+        "description": "Simulate contact API failure on form submission"
+      },
+      {
+        "type": "action",
+        "description": "Submit the form"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify failure toast notification is shown with retry option"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify form inputs retain the user's data after failure"
+      },
+      {
+        "type": "action",
+        "description": "Click retry and simulate successful API call"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify success toast is shown and form clears or disables further input"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Contact section social profile links and résumé download",
+    "description": "Verify contact section provides functional links to social profiles and allows downloading a résumé file.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the contact section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify social profile links are present"
+      },
+      {
+        "type": "action",
+        "description": "Click on each social link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify links open the correct social profiles in a new tab or window"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a résumé download link/button is present"
+      },
+      {
+        "type": "action",
+        "description": "Click résumé download link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify résumé file downloads successfully"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Responsive navigation bar functionality on desktop and mobile",
+    "description": "Verify the sticky navbar with anchor links works correctly on desktop and mobile, including the collapsible mobile menu with touch-friendly interactions.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Resize browser to desktop width and load homepage"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify sticky navbar remains visible on scroll"
+      },
+      {
+        "type": "action",
+        "description": "Click each navbar anchor link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify page scrolls smoothly to the corresponding section and URL hash updates accordingly"
+      },
+      {
+        "type": "action",
+        "description": "Resize browser to mobile width"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify navbar menu collapses into a hamburger icon"
+      },
+      {
+        "type": "action",
+        "description": "Tap hamburger icon to expand mobile menu"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify menu expands and anchor links are touch friendly"
+      },
+      {
+        "type": "action",
+        "description": "Tap on a mobile navigation link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify page scrolls to section and mobile menu collapses"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Keyboard accessibility for all interactive elements",
+    "description": "Ensure that all interactive components including navbar links, project cards, contact form inputs and buttons, toast notifications, and filtering controls are operable via keyboard only.",
+    "category": "accessibility",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Use keyboard tabbing through the entire page in sequential order"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify focus states are visible on all interactive elements"
+      },
+      {
+        "type": "action",
+        "description": "Activate interactive elements using keyboard controls (Enter, Space)"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify expected behaviors occur (navigation, modals open, form inputs focus, etc.)"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify keyboard can close any open modals or menus"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Images load with lazy loading and fallback placeholders",
+    "description": "Test that images (project cards, hero section, skills icons) use optimized lazy loading and display fallback placeholders when image loading fails.",
+    "category": "performance",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load homepage and scroll through sections"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify images lazy load as they come into the viewport"
+      },
+      {
+        "type": "action",
+        "description": "Simulate image load failure for a project card or hero section image"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a fallback placeholder image or icon is shown instead"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Reusable UI components consistency",
+    "description": "Verify buttons, cards, inputs, and toast notifications used throughout the site maintain consistent styling, behavior, and accessibility compliance.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate through various site sections: Hero, Projects, Skills, Contact"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify buttons share consistent styling, hover/focus behavior, and accessible labels"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify cards have consistent sizing, shadows, and layout"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify input fields have consistent styling and validation feedback"
+      },
+      {
+        "type": "action",
+        "description": "Trigger toast notifications on success and failure (e.g. contact form submissions)"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify toasts appear consistently with correct style, accessibility roles, and dismissal functionality"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Accessibility audit: ARIA roles, semantic markup, and color contrast compliance",
+    "description": "Run an accessibility audit to verify the website meets standards for ARIA roles, semantic HTML structure, keyboard navigation, and sufficient color contrast.",
+    "category": "accessibility",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Run automated accessibility tools (e.g. axe, Lighthouse) on all main pages and sections"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no critical accessibility violations are reported"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify ARIA roles are applied appropriately (e.g. alerts for toast, navigation landmarks for navbar)"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify semantic HTML tags are used correctly (header, nav, main, section, footer)"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify color contrast ratios meet WCAG 2.1 AA standards"
+      }
+    ]
+  }
+]

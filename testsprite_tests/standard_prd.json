@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "project": "Developer Portfolio Website",
+    "date": "2025-08-31",
+    "prepared_by": "Software Development Manager"
+  },
+  "product_overview": "A single-page portfolio website designed to showcase a developer's skills, projects, and contact information in a visually polished, fast-loading, and accessible format. The site features distinct sections for hero, projects, skills, and contact, enhanced with subtle animated backgrounds and responsive navigation for both desktop and mobile users.",
+  "core_goals": [
+    "Present projects with contextual visuals and links to source code and live demos.",
+    "Clearly communicate technical skills and tools used.",
+    "Provide an easy and reliable way for prospective employers or clients to contact the developer.",
+    "Ensure fast loading times on both desktop and mobile devices.",
+    "Maintain accessibility and responsiveness across devices and input methods.",
+    "Implement reusable UI components for consistency and maintenance efficiency."
+  ],
+  "key_features": [
+    "Hero Section: Full-bleed area with engaging background or animated visuals, including a short introduction and primary calls-to-action.",
+    "Projects Section: Display portfolio projects as cards with images, descriptions, tech tags, and links to repositories and live demos; supports filtering by categories or technologies.",
+    "Skills Section: Visual representation of technical skills grouped by frontend, backend, and tools, using icons or progress indicators to show competency.",
+    "Contact Section: Contact form with fields for name, email, and message, featuring client-side validation, success/failure feedback, and links to social profiles and downloadable résumé.",
+    "Animated Background Component: Subtle, performant animated visuals that respect user preferences like reduced-motion.",
+    "Responsive Navigation: Sticky navbar with anchor links to page sections and a mobile-friendly collapsible menu.",
+    "Accessibility and Performance Enhancements: Semantic HTML, keyboard operability, ARIA labels, optimized images with lazy loading, and minimal JavaScript to speed first paint.",
+    "Reusable UI Primitives: Consistent buttons, cards, inputs, and toast notifications used throughout the site."
+  ],
+  "user_flow_summary": [
+    "Initial Load: Displays hero and navigation components quickly; animated backgrounds begin if user preferences allow; main content accessible via anchored navigation links.",
+    "Project Interaction: Clicking a project card opens a detailed modal or navigates to a detail page showcasing screenshots, descriptions, tech stacks, and links; may include demo or carousel.",
+    "Submitting Contact Form: User fills out form validated in real-time, submits it, and sees inline loading followed by toast notifications indicating success or failure; errors offer retry options.",
+    "Navigating Sections: Users use the navbar to jump to sections, updating URL hashes to support deep linking and direct access.",
+    "Mobile Experience: Collapsible mobile navigation menu; vertically stacked project cards with touch-friendly interactions."
+  ],
+  "validation_criteria": [
+    "Homepage loads in under 2 seconds on typical 3G connections or performance optimization plan available.",
+    "All interactive elements are keyboard accessible.",
+    "Contact form reliably returns success and failure states with appropriate user feedback.",
+    "Projects render correctly on all screen sizes and allow users to open detailed views on click or tap.",
+    "Empty project lists display a friendly placeholder message.",
+    "Contact API failures prompt retry options and preserve user input.",
+    "Image load failures are handled gracefully with fallback placeholders.",
+    "Animations respect user preferences for reduced motion.",
+    "Accessibility audits confirm color contrast, ARIA roles, and semantic markup compliance."
+  ],
+  "code_summary": {
+    "tech_stack": [
+      "TypeScript",
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Shadcn UI"
+    ],
+    "features": [
+      {
+        "name": "App Component",
+        "description": "Main application component, orchestrates the overall layout and routing.",
+        "files": [
+          "src/App.tsx",
+          "src/App.css"
+        ]
+      },
+      {
+        "name": "Index Page",
+        "description": "The main landing page of the portfolio.",
+        "files": [
+          "src/pages/Index.tsx"
+        ]
+      },
+      {
+        "name": "Hero Section",
+        "description": "Displays the main introductory content, often with a background image.",
+        "files": [
+          "src/components/HeroSection.tsx",
+          "src/assets/hero-bg.jpg"
+        ]
+      },
+      {
+        "name": "Projects Section",
+        "description": "Displays a portfolio of projects.",
+        "files": [
+          "src/components/ProjectsSection.tsx"
+        ]
+      },
+      {
+        "name": "Skills Section",
+        "description": "Displays a list of skills or technologies.",
+        "files": [
+          "src/components/SkillsSection.tsx"
+        ]
+      },
+      {
+        "name": "Contact Section",
+        "description": "Provides a form or information for contacting.",
+        "files": [
+          "src/components/ContactSection.tsx"
+        ]
+      },
+      {
+        "name": "Animated Background",
+        "description": "A component for an animated visual background.",
+        "files": [
+          "src/components/AnimatedBackground.tsx"
+        ]
+      },
+      {
+        "name": "Utility Functions",
+        "description": "Collection of general utility functions.",
+        "files": [
+          "src/lib/utils.ts"
+        ]
+      },
+      {
+        "name": "useMobile Hook",
+        "description": "Custom hook to detect mobile screen size.",
+        "files": [
+          "src/hooks/use-mobile.tsx"
+        ]
+      },
+      {
+        "name": "Toast System",
+        "description": "Hook and components for displaying toast notifications.",
+        "files": [
+          "src/hooks/use-toast.ts",
+          "src/components/ui/toast.tsx",
+          "src/components/ui/toaster.tsx",
+          "src/components/ui/use-toast.ts"
+        ]
+      }
+    ]
+  }
+}

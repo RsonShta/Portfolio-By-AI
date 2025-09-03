@@ -1,10 +1,11 @@
+import React, { forwardRef } from "react";
 import { ExternalLink, Github, Shield, Globe, Database } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import AnimatedBackground from "./AnimatedBackground";
 
-const ProjectsSection = () => {
+const ProjectsSection = forwardRef<HTMLDivElement>((props, ref) => {
   const projects = [
     {
       title: "SecureAuth Dashboard",
@@ -45,7 +46,7 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section className="relative py-20 px-6 overflow-hidden">
+    <section ref={ref} className="relative py-20 px-6 overflow-hidden">
       <AnimatedBackground variant="grid" className="opacity-30" />
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="text-center mb-16">
@@ -105,6 +106,6 @@ const ProjectsSection = () => {
       </div>
     </section>
   );
-};
+});
 
 export default ProjectsSection;

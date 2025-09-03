@@ -1,0 +1,86 @@
+{
+  "tech_stack": [
+    "TypeScript",
+    "React",
+    "Vite",
+    "Tailwind CSS",
+    "Shadcn UI"
+  ],
+  "features": [
+    {
+      "name": "App Component",
+      "description": "Main application component, orchestrates the overall layout and routing.",
+      "files": [
+        "src/App.tsx",
+        "src/App.css"
+      ]
+    },
+    {
+      "name": "Index Page",
+      "description": "The main landing page of the portfolio.",
+      "files": [
+        "src/pages/Index.tsx"
+      ]
+    },
+    {
+      "name": "Hero Section",
+      "description": "Displays the main introductory content, often with a background image.",
+      "files": [
+        "src/components/HeroSection.tsx",
+        "src/assets/hero-bg.jpg"
+      ]
+    },
+    {
+      "name": "Projects Section",
+      "description": "Displays a portfolio of projects.",
+      "files": [
+        "src/components/ProjectsSection.tsx"
+      ]
+    },
+    {
+      "name": "Skills Section",
+      "description": "Displays a list of skills or technologies.",
+      "files": [
+        "src/components/SkillsSection.tsx"
+      ]
+    },
+    {
+      "name": "Contact Section",
+      "description": "Provides a form or information for contacting.",
+      "files": [
+        "src/components/ContactSection.tsx"
+      ]
+    },
+    {
+      "name": "Animated Background",
+      "description": "A component for an animated visual background.",
+      "files": [
+        "src/components/AnimatedBackground.tsx"
+      ]
+    },
+    {
+      "name": "Utility Functions",
+      "description": "Collection of general utility functions.",
+      "files": [
+        "src/lib/utils.ts"
+      ]
+    },
+    {
+      "name": "useMobile Hook",
+      "description": "Custom hook to detect mobile screen size.",
+      "files": [
+        "src/hooks/use-mobile.tsx"
+      ]
+    },
+    {
+      "name": "Toast System",
+      "description": "Hook and components for displaying toast notifications.",
+      "files": [
+        "src/hooks/use-toast.ts",
+        "src/components/ui/toast.tsx",
+        "src/components/ui/toaster.tsx",
+        "src/components/ui/use-toast.ts"
+      ]
+    }
+  ]
+}

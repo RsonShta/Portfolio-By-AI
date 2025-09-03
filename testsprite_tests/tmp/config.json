@@ -1,0 +1,18 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:8080",
+  "loginUser": "rson",
+  "loginPassword": "rson0110",
+  "executionArgs": {
+    "projectName": "PortfolioFinal",
+    "projectPath": "c:/Users/rsons/OneDrive/Desktop/PortfolioFinal",
+    "testIds": [],
+    "additionalInstruction": "",
+    "envs": {
+      "API_KEY": "sk-user-d2z91Q9r7gV5OWbl-2_yVmV8yGW7wF56OJIKXtut3_ljmYhhycAjc8wnP2HImx12_eM1UafY6f3HjS676t9nfUW4pB1g-vy44WTgE9Z1Ge27LRFYiEQUtjVkDNljaXK10cA"
+    }
+  },
+  "proxy": "http://9053e88b-2dc8-4c69-8c9a-efbbd8ec2f42:AXaRDtOJIrAi9qoi2WLzBx5SYJcIc842@tun.testsprite.com:8080"
+}
